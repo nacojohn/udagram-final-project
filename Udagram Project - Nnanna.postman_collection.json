@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "dc99849a-f6e5-4ecc-87a5-4c8f2a4a460b",
+		"name": "Udagram Project - Nnanna",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List a user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{url}}/users/nacojohn@gmail.com"
+			},
+			"response": []
+		},
+		{
+			"name": "Add new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"nacojohn@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/users/auth"
+			},
+			"response": []
+		},
+		{
+			"name": "Send Image",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hY29qb2huQGdtYWlsLmNvbSIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTAkMnN3NnFOVHFpRFdjbDgyclM0NDh5Ty9NejEwNUgucElxWnpQeFBIcVZyaUtwbUxSTjlITjIiLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTE0VDEzOjEzOjAyLjg2NloiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTE0VDEzOjEzOjAyLjg2NloiLCJpYXQiOjE2MzE2MjUxODN9.VPPJA3s-sTw2bomzR30HuTW8mapkhTt3TNpoc3webnQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{url}}/filteredimage?image_url=https://rad5.com.ng/res/images/rad5hub.png",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://rad5.com.ng/res/images/rad5hub.png"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Images",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hY29qb2huQGdtYWlsLmNvbSIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTAkMnN3NnFOVHFpRFdjbDgyclM0NDh5Ty9NejEwNUgucElxWnpQeFBIcVZyaUtwbUxSTjlITjIiLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTE0VDEzOjEzOjAyLjg2NloiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTE0VDEzOjEzOjAyLjg2NloiLCJpYXQiOjE2MzE2MjUxODN9.VPPJA3s-sTw2bomzR30HuTW8mapkhTt3TNpoc3webnQ"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": "{{url}}/deleteimages"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8082"
+		}
+	]
+}
