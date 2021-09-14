@@ -33,6 +33,24 @@
 			"response": []
 		},
 		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"nacojohn@gmail.com\",\n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}/users/auth/login"
+			},
+			"response": []
+		},
+		{
 			"name": "Send Image",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -41,7 +59,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hY29qb2huQGdtYWlsLmNvbSIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTAkMnN3NnFOVHFpRFdjbDgyclM0NDh5Ty9NejEwNUgucElxWnpQeFBIcVZyaUtwbUxSTjlITjIiLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTE0VDEzOjEzOjAyLjg2NloiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTE0VDEzOjEzOjAyLjg2NloiLCJpYXQiOjE2MzE2MjUxODN9.VPPJA3s-sTw2bomzR30HuTW8mapkhTt3TNpoc3webnQ"
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hY29qb2huQGdtYWlsLmNvbSIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTAka0hxaEdMR0wydTRWeUkvNGdYNFpzT3NvWmw0Z2VDY3I5ODVRdjh5YThlMGFHTDJhYkZTaEciLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTE0VDE0OjQ1OjQ2LjQwMloiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTE0VDE0OjQ1OjQ2LjQwM1oiLCJpYXQiOjE2MzE2MzY4Mzd9.03o2t-S96vl8Anppp-3YoWhYomjbV3DlXbs1_E37D7k"
 					}
 				},
 				"method": "GET",
@@ -77,7 +95,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hY29qb2huQGdtYWlsLmNvbSIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTAkMnN3NnFOVHFpRFdjbDgyclM0NDh5Ty9NejEwNUgucElxWnpQeFBIcVZyaUtwbUxSTjlITjIiLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTE0VDEzOjEzOjAyLjg2NloiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTE0VDEzOjEzOjAyLjg2NloiLCJpYXQiOjE2MzE2MjUxODN9.VPPJA3s-sTw2bomzR30HuTW8mapkhTt3TNpoc3webnQ"
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5hY29qb2huQGdtYWlsLmNvbSIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTAka0hxaEdMR0wydTRWeUkvNGdYNFpzT3NvWmw0Z2VDY3I5ODVRdjh5YThlMGFHTDJhYkZTaEciLCJjcmVhdGVkQXQiOiIyMDIxLTA5LTE0VDE0OjQ1OjQ2LjQwMloiLCJ1cGRhdGVkQXQiOiIyMDIxLTA5LTE0VDE0OjQ1OjQ2LjQwM1oiLCJpYXQiOjE2MzE2MzY4Mzd9.03o2t-S96vl8Anppp-3YoWhYomjbV3DlXbs1_E37D7k"
 					}
 				},
 				"method": "GET",
@@ -91,10 +109,30 @@
 			"response": []
 		}
 	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "url",
-			"value": "http://localhost:8082"
+			"value": "http://udagram-final-project-dev.us-east-1.elasticbeanstalk.com"
 		}
 	]
 }
